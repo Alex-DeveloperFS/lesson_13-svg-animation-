@@ -1,12 +1,84 @@
 @use "libs/normalize";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background-dark {
+  min-height: 100vh;
+  background-image: url("../../assets/image/dark.jpg");
+}
+
+.container {
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-image: url("../../assets/image/white.jpg");
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+  padding-top: 100px;
+  font-size: 48px;
+  padding-bottom: 50px;
+}
+
 .svg__box {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin-top: 50px;
+
+  &__rectanglet {
+    animation: color-fill 5s infinite ease-in-out;
+  }
+
+  @keyframes color-fill {
+    0% {
+      fill: red;
+      stroke: black;
+    }
+    25% {
+      fill: green;
+      stroke: red;
+    }
+    50% {
+      fill: blue;
+      stroke: green;
+    }
+    75% {
+      fill: yellow;
+      stroke: blue;
+    }
+    100% {
+      fill: chocolate;
+      stroke: yellow;
+    }
+  }
 }
 
-.svg__box__rectanglet {
-  ;
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  width: 1280px;
+  height: 50px;
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    transition: 0.25s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
